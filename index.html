@@ -1,115 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ONEPIECE</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Piece Coin</title>
   <style>
-    body {
+    /* Reset */
+    body, html {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-      color: white;
-      text-align: center;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      scroll-behavior: smooth;
+      background: #0f1c2e;
     }
-    header {
-      padding: 20px;
+    section {
+      padding: 80px 20px;
+      text-align: center;
+      color: #fff;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.85);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 10px 30px;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
     }
-    header img {
+    .navbar img {
       height: 50px;
     }
-    nav a {
-      margin: 0 15px;
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
+      color: #ffd700; /* emas */
       text-decoration: none;
-      color: white;
+      font-size: 16px;
       font-weight: bold;
+      transition: color 0.3s;
     }
+    .nav-links a:hover {
+      color: #ff4444; /* merah Luffy */
+    }
+
+    /* Hero */
     .hero {
-      padding: 100px 20px;
+      background: linear-gradient(135deg, #00416a, #e4e5e6); /* biru laut → putih */
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 60px;
     }
-    .hero h1 {
-      font-size: 3em;
+    .hero img {
+      width: 180px;
       margin-bottom: 20px;
     }
+    .hero h1 {
+      font-size: 56px;
+      margin: 10px 0;
+      color: #ffd700; /* emas */
+      text-shadow: 2px 2px 8px #000;
+    }
     .hero p {
-      font-size: 1.2em;
+      font-size: 22px;
       margin-bottom: 30px;
+      color: #fff;
     }
     .btn {
-      background: #ff007f;
-      padding: 12px 25px;
-      border-radius: 25px;
+      background: #ff4444;
       color: white;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 18px;
       font-weight: bold;
       text-decoration: none;
+      box-shadow: 0 0 15px rgba(255, 68, 68, 0.6);
+      transition: 0.3s;
     }
-    section {
-      padding: 60px 20px;
+    .btn:hover {
+      background: #cc0000;
     }
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
+
+    /* Sections */
+    .about {
+      background: #1b2735;
     }
-    .card {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 15px;
-      width: 250px;
+    .tokenomics {
+      background: #112031;
     }
+    .how-to-buy {
+      background: #0f2027;
+    }
+
+    h2 {
+      font-size: 36px;
+      color: #ffd700;
+      margin-bottom: 20px;
+    }
+    p, ol {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Footer */
     footer {
-      padding: 20px;
-      background: rgba(0,0,0,0.5);
-      margin-top: 40px;
+      background: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Logo" />
-    <nav>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <img src="logo.png" alt="One Piece Coin Logo">
+    <div class="nav-links">
+      <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#community">Community</a>
-    </nav>
-  </header>
-
-  <div class="hero">
-    <h1>Welcome to ONE PIECE COIN 🚀</h1>
-    <p>The next generation meme token that will reach the stars!</p>
-    <a href="#" class="btn">Join Community</a>
-  </div>
-
-  <section id="about">
-    <h2>About Us</h2>
-    <p>ONEPIECE is a fun and community-driven crypto project built for the future.</p>
-  </section>
-
-  <section id="roadmap">
-    <h2>Roadmap</h2>
-    <div class="features">
-      <div class="card">🚀 Launch</div>
-      <div class="card">🌍 Community Building</div>
-      <div class="card">💎 Exchange Listing</div>
-      <div class="card">🌌 Metaverse Expansion</div>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#how-to-buy">How to Buy</a>
     </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <img src="luffy-coin.png" alt="One Piece Coin Logo">
+    <h1>One Piece Coin 🚀</h1>
+    <p>The treasure of the crypto seas – join the adventure today!</p>
+    <a href="#about" class="btn">Join the Crew</a>
   </section>
 
-  <section id="community">
-    <h2>Join the Community</h2>
-    <p>Follow us and be part of the journey:</p>
+  <!-- About -->
+  <section class="about" id="about">
+    <h2>About Us</h2>
     <p>
-      <a href="https://twitter.com" target="_blank">🐦 Twitter</a> | 
-      <a href="https://t.me" target="_blank">💬 Telegram</a>
+      ONE PIECE COIN is a community-driven token inspired by the spirit of adventure and freedom.  
+      Our mission is to bring the energy of the seas into the world of crypto – bold, limitless, and united.
     </p>
   </section>
 
+  <!-- Tokenomics -->
+  <section class="tokenomics" id="tokenomics">
+    <h2>Tokenomics</h2>
+    <p>Total Supply: 1,000,000,000,000 OPC</p>
+    <p>50% Community | 25% Liquidity | 15% Marketing | 10% Team</p>
+  </section>
+
+  <!-- How to Buy -->
+  <section class="how-to-buy" id="how-to-buy">
+    <h2>How to Buy</h2>
+    <ol>
+      <li>Create a wallet (MetaMask / Trust Wallet).</li>
+      <li>Buy BNB or ETH on an exchange.</li>
+      <li>Connect your wallet to PancakeSwap or Uniswap.</li>
+      <li>Swap BNB/ETH for ONE PIECE COIN (OPC).</li>
+      <li>HODL and join our crew!</li>
+    </ol>
+  </section>
+  <!-- Footer -->
   <footer>
-    <p>© 2025 ONE PIECE. All rights reserved.</p>
+    © 2025 One Piece Coin. All Rights Reserved.
   </footer>
+
 </body>
 </html>
