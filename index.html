@@ -1,10 +1,115 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My First Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AsterINU</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
+    }
+    header {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header img {
+      height: 50px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+    .hero {
+      padding: 100px 20px;
+    }
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+    .btn {
+      background: #ff007f;
+      padding: 12px 25px;
+      border-radius: 25px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    section {
+      padding: 60px 20px;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+      width: 250px;
+    }
+    footer {
+      padding: 20px;
+      background: rgba(0,0,0,0.5);
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello World 🚀</h1>
-  <p>Website pertama saya di GitHub Pages!</p>
+  <header>
+    <img src="logo.png" alt="Logo" />
+    <nav>
+      <a href="#about">About</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#community">Community</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Welcome to AsterINU 🚀</h1>
+    <p>The next generation meme token that will reach the stars!</p>
+    <a href="#" class="btn">Join Community</a>
+  </div>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>AsterINU is a fun and community-driven crypto project built for the future.</p>
+  </section>
+
+  <section id="roadmap">
+    <h2>Roadmap</h2>
+    <div class="features">
+      <div class="card">🚀 Launch</div>
+      <div class="card">🌍 Community Building</div>
+      <div class="card">💎 Exchange Listing</div>
+      <div class="card">🌌 Metaverse Expansion</div>
+    </div>
+  </section>
+
+  <section id="community">
+    <h2>Join the Community</h2>
+    <p>Follow us and be part of the journey:</p>
+    <p>
+      <a href="https://twitter.com" target="_blank">🐦 Twitter</a> | 
+      <a href="https://t.me" target="_blank">💬 Telegram</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 AsterINU. All rights reserved.</p>
+  </footer>
 </body>
 </html>
