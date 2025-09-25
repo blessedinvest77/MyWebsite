@@ -12,6 +12,7 @@
       font-family: 'Arial', sans-serif;
       scroll-behavior: smooth;
       background: #0f1c2e;
+      overflow-x: hidden;
     }
     section {
       padding: 80px 20px;
@@ -53,28 +54,33 @@
 
     /* Hero */
     .hero {
-      background: linear-gradient(135deg, #00416a, #e4e5e6); /* biru laut → putih */
+      position: relative;
+      background: linear-gradient(135deg, #00416a, #e4e5e6);
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       padding-top: 60px;
+      overflow: hidden;
     }
     .hero img {
       width: 180px;
       margin-bottom: 20px;
+      z-index: 2;
     }
     .hero h1 {
       font-size: 56px;
       margin: 10px 0;
-      color: #ffd700; /* emas */
+      color: #ffd700;
       text-shadow: 2px 2px 8px #000;
+      z-index: 2;
     }
     .hero p {
       font-size: 22px;
       margin-bottom: 30px;
       color: #fff;
+      z-index: 2;
     }
     .btn {
       background: #ff4444;
@@ -86,21 +92,35 @@
       text-decoration: none;
       box-shadow: 0 0 15px rgba(255, 68, 68, 0.6);
       transition: 0.3s;
+      z-index: 2;
     }
     .btn:hover {
       background: #cc0000;
     }
 
+    /* Falling coins */
+    .coin {
+      position: absolute;
+      top: -50px;
+      font-size: 24px;
+      color: #ffd700;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.6;
+      }
+    }
+
     /* Sections */
-    .about {
-      background: #1b2735;
-    }
-    .tokenomics {
-      background: #112031;
-    }
-    .how-to-buy {
-      background: #0f2027;
-    }
+    .about { background: #1b2735; }
+    .tokenomics { background: #112031; }
+    .how-to-buy { background: #0f2027; }
 
     h2 {
       font-size: 36px;
@@ -153,7 +173,6 @@
       Our mission is to bring the energy of the seas into the world of crypto – bold, limitless, and united.
     </p>
   </section>
-
   <!-- Tokenomics -->
   <section class="tokenomics" id="tokenomics">
     <h2>Tokenomics</h2>
@@ -165,17 +184,35 @@
   <section class="how-to-buy" id="how-to-buy">
     <h2>How to Buy</h2>
     <ol>
-      <li>Create a wallet (MetaMask / Trust Wallet).</li>
-      <li>Buy BNB or ETH on an exchange.</li>
-      <li>Connect your wallet to PancakeSwap or Uniswap.</li>
-      <li>Swap BNB/ETH for ONE PIECE COIN (OPC).</li>
+      <li>Create a wallet (Phantoms).</li>
+      <li>Buy SOLANA on an exchange.</li>
+      <li>Connect your wallet to Phantoms.</li>
+      <li>Swap SOL for ONE PIECE COIN (OPC).</li>
       <li>HODL and join our crew!</li>
     </ol>
   </section>
+
   <!-- Footer -->
   <footer>
     © 2025 One Piece Coin. All Rights Reserved.
   </footer>
 
+  <!-- Script for falling coins -->
+  <script>
+    function createCoin() {
+      const coin = document.createElement("div");
+      coin.classList.add("coin");
+      coin.textContent = "🪙";
+      coin.style.left = Math.random() * 100 + "vw";
+      coin.style.animationDuration = (Math.random() * 3 + 2) + "s"; // 2-5s
+      document.querySelector(".hero").appendChild(coin);
+
+      setTimeout(() => {
+        coin.remove();
+      }, 5000);
+    }
+
+    setInterval(createCoin, 300); // koin jatuh tiap 0.3 detik
+  </script>
 </body>
 </html>
